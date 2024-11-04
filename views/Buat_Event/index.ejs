@@ -10,6 +10,12 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <style>
+      .error-message {
+        color: red;
+        font-size: 0.875rem;
+      }
+    </style>
   </head>
   <body>
     <br />
@@ -20,92 +26,78 @@
       <div class="d-flex justify-content-center">
         <h1 class="">Buat Event</h1>
       </div>
-      <form method="post" action="/buat-event">
+      <form id="event-form" method="post" action="/buat-event">
         <div class="mb-3">
-          <label for="nama-event" class="form-label" >Nama Event</label>
+          <label for="nama-event" class="form-label">Nama Event</label>
           <input
-          required
             type="text"
             class="form-control"
             id="nama-event"
             name="nama_event"
             placeholder="Contoh: Kajian Milenial"
           />
+          <div class="error-message" id="nama-event-error"></div>
         </div>
+
         <div class="mb-3">
-          <label for="deskripsi-event" class="form-label">
-            Deskripsi Event</label
+          <label for="deskripsi-event" class="form-label"
+            >Deskripsi Event</label
           >
-          <textarea required
+          <textarea
             class="form-control"
             id="deskripsi-event"
             name="deskripsi_event"
             rows="3"
             placeholder="Contoh: Kajian Milenial merupakan..."
           ></textarea>
+          <div class="error-message" id="deskripsi-event-error"></div>
         </div>
 
         <div class="mb-3">
           <label for="penyelenggara-event" class="form-label"
             >Penyelenggara Event</label
           >
-          <input required
+          <input
             type="text"
             class="form-control"
             name="penyelenggara_event"
             id="penyelenggara-event"
             placeholder="Contoh: HMRPL/Ditmawa Tel-U"
           />
+          <div class="error-message" id="penyelenggara-event-error"></div>
         </div>
-        <div class="mb-3">
-          <!-- <label for="divisi-event" class="form-label">
-            Divisi, Jumlah orang dibutuhkan & Jobdesk dari divisi
-            tersebut</label
-          >
-          <textarea
-            class="form-control"
-            id="deskripsi-event"
-            name="klasifikasi_divisi"
-            rows="3"
-            placeholder="Contoh:
-# Divisi Acara (10 Orang)
-- Memasikan acara lancar
-- menghubungi pemateri" -->
 
-          <!-- ></textarea> -->
-          <label for="divisi-event" class="form-label">
-            Divisi Yang Dibutuhkan
-          </label>
-          <br>
-          <label>
-            <input type="checkbox" name="divisi[]" value="Acara"> 
-            Divisi Acara
-          </label>
-          <br>
-          <label>
-            <input type="checkbox" name="divisi[]" value="Media"> 
-            Divisi Media
-          </label>
-          <br>
-          <label>
-            <input type="checkbox" name="divisi[]" value="Logistik"> 
-            Divisi Logistik
-          </label>
-          <br>
-          <label>
-            <input type="checkbox" name="divisi[]" value="Dekorasi"> 
-            Divisi Dekorasi
-          </label>
-          <br>
-          <label>
-            <input type="checkbox" name="divisi[]" value="Inti"> 
-            Divisi Inti
-          </label>
-          <br>
-        </div>
         <div class="mb-3">
-          <label for="benefit_event" class="form-label">
-            Benefit Mengikuti Event</label
+          <label for="divisi-event" class="form-label"
+            >Divisi Yang Dibutuhkan</label
+          >
+          <br />
+          <label
+            ><input type="checkbox" name="divisi[]" value="Acara" /> Divisi
+            Acara</label
+          ><br />
+          <label
+            ><input type="checkbox" name="divisi[]" value="Media" /> Divisi
+            Media</label
+          ><br />
+          <label
+            ><input type="checkbox" name="divisi[]" value="Logistik" /> Divisi
+            Logistik</label
+          ><br />
+          <label
+            ><input type="checkbox" name="divisi[]" value="Dekorasi" /> Divisi
+            Dekorasi</label
+          ><br />
+          <label
+            ><input type="checkbox" name="divisi[]" value="Inti" /> Divisi
+            Inti</label
+          ><br />
+          <div class="error-message" id="divisi-error"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="benefit-event" class="form-label"
+            >Benefit Mengikuti Event</label
           >
           <textarea
             class="form-control"
@@ -113,51 +105,57 @@
             name="benefit_event"
             rows="3"
             placeholder="Contoh:
-- Mendapat Relasi
-- Menambah pengalaman
-- Mendapat honor sebesar 10jt"
+            - Mendapat Relasi
+            - Menambah pengalaman
+            - Mendapat honor sebesar 10jt"
           ></textarea>
+          <div class="error-message" id="benefit-event-error"></div>
         </div>
+
         <div class="row">
           <div class="col-6">
             <div class="mb-3">
               <label for="kepanitiaan-mulai" class="form-label"
-                >Waktu kepanitiaan Mulai</label
+                >Waktu Kepanitiaan Mulai</label
               >
-              <input required
+              <input
                 type="datetime-local"
                 class="form-control"
                 id="kepanitiaan-mulai"
                 name="kepanitiaan_mulai"
               />
+              <div class="error-message" id="kepanitiaan-mulai-error"></div>
             </div>
           </div>
           <div class="col-6">
             <div class="mb-3">
               <label for="kepanitiaan-selesai" class="form-label"
-                >Waktu kepanitiaan Selesai</label
+                >Waktu Kepanitiaan Selesai</label
               >
-              <input required
+              <input
                 type="datetime-local"
                 class="form-control"
                 id="kepanitiaan-selesai"
                 name="kepanitiaan_selesai"
               />
+              <div class="error-message" id="kepanitiaan-selesai-error"></div>
             </div>
           </div>
         </div>
+
         <div class="row">
           <div class="col-6">
             <div class="mb-3">
               <label for="event-mulai" class="form-label"
                 >Waktu Event Mulai</label
               >
-              <input required
+              <input
                 type="datetime-local"
                 class="form-control"
                 id="event-mulai"
                 name="event_mulai"
               />
+              <div class="error-message" id="event-mulai-error"></div>
             </div>
           </div>
           <div class="col-6">
@@ -165,12 +163,13 @@
               <label for="event-selesai" class="form-label"
                 >Waktu Event Selesai</label
               >
-              <input required
+              <input
                 type="datetime-local"
                 class="form-control"
                 id="event-selesai"
                 name="event_selesai"
               />
+              <div class="error-message" id="event-selesai-error"></div>
             </div>
           </div>
           <div class="col-6">
@@ -184,6 +183,7 @@
                 id="poster-acara"
                 name="poster_event"
               />
+              <div class="error-message" id="poster-acara-error"></div>
             </div>
           </div>
         </div>
@@ -198,5 +198,61 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      document
+        .getElementById("event-form")
+        .addEventListener("submit", function (event) {
+          // Clear any existing error messages
+          document
+            .querySelectorAll(".error-message")
+            .forEach((el) => (el.textContent = ""));
+
+          // Validate required fields
+          const requiredFields = [
+            { id: "nama-event", name: "Nama Event" },
+            { id: "deskripsi-event", name: "Deskripsi Event" },
+            { id: "penyelenggara-event", name: "Penyelenggara Event" },
+            { id: "benefit-event", name: "Benefit Event" },
+            { id: "kepanitiaan-mulai", name: "Waktu Kepanitiaan Mulai" },
+            { id: "kepanitiaan-selesai", name: "Waktu Kepanitiaan Selesai" },
+            { id: "event-mulai", name: "Waktu Event Mulai" },
+            { id: "event-selesai", name: "Waktu Event Selesai" },
+            { id: "poster-acara", name: "Poster Acara" },
+          ];
+
+          let isValid = true;
+
+          // Check if all required text fields are filled
+          requiredFields.forEach((field) => {
+            const inputElement = document.getElementById(field.id);
+            if (!inputElement.value.trim()) {
+              document.getElementById(
+                `${field.id}-error`
+              ).textContent = `${field.name} wajib diisi.`;
+              isValid = false;
+            }
+          });
+
+          // Validate at least one divisi checkbox is selected
+          const divisiCheckboxes = document.querySelectorAll(
+            "input[name='divisi[]']"
+          );
+          const isDivisiSelected = Array.from(divisiCheckboxes).some(
+            (checkbox) => checkbox.checked
+          );
+
+          if (!isDivisiSelected) {
+            document.getElementById("divisi-error").textContent =
+              "Pilih minimal satu Divisi.";
+            isValid = false;
+          }
+
+          // Prevent form submission if there are validation errors
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script>
   </body>
 </html>
