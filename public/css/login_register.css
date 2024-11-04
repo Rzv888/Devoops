@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 * {
@@ -362,4 +361,35 @@ label.error {
 
 #form-message-warning {
     color: #B90B0B;
+}
+.form-row {
+    display: flex;
+    gap: 10px; /* Jarak antar elemen */
+    align-items: center;
+}
+
+.form-row input[type="email"],
+.form-row .password-container {
+    flex: 1; /* Mengatur elemen agar berbagi ruang yang tersedia */
+}
+
+.password-container {
+    position: relative;
+    width: 100%; /* Pastikan kontainer password memenuhi lebar kolom */
+}
+
+.password-container input[type="password"] {
+    width: 100%; /* Agar input password memenuhi kolomnya */
+    padding-right: 40px; /* Ruang untuk ikon mata */
+}
+
+.password-container #togglePassword {
+    position: absolute;
+    right: 10px; /* Posisikan ikon tepat di sebelah kanan */
+    top: 50%; /* Posisikan ikon di tengah secara vertikal */
+    transform: translateY(-50%); /* Sesuaikan agar benar-benar berada di tengah */
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Animasi transisi untuk perubahan warna */
 }
