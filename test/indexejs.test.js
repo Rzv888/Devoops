@@ -32,7 +32,6 @@ describe("Form Validation for index.ejs", () => {
   test("Displays error if 'Nama Event' is empty", () => {
     const form = document.getElementById("event-form");
     const namaEvent = document.getElementById("nama-event");
-    const namaEventError = document.getElementById("nama-event-error");
 
     namaEvent.value = ""; // Simulate empty input
 
