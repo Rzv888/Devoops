@@ -198,5 +198,22 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+    
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+    
+          const isConfirmed = confirm("Form berhasil disubmit!");
+    
+          if (isConfirmed) {
+            form.submit();
+          }
+        });
+      });
+    </script>
+    
   </body>
 </html>
