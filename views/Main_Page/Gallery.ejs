@@ -10,21 +10,21 @@
       </div>
     </div>
 
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openPopup(this)">
       <img src="https://images.pexels.com/photos/3889868/pexels-photo-3889868.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Image 2">
       <div class="overlay">
         <p>PKKMB 2020</p>
       </div>
     </div>  
 
-    <div class="gallery-item">
+    <div class="gallery-item" onclick="openPopup(this)">
       <img src="https://images.pexels.com/photos/2326290/pexels-photo-2326290.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
       <div class="overlay">
         <p>PKKMB 2021</p>
       </div>
     </div>
   
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="openPopup(this)">
           <img src="https://images.pexels.com/photos/2360569/pexels-photo-2360569.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
           <div class="overlay">
             <p>Festival budaya 2022</p>
@@ -59,7 +59,7 @@ function openPopup(element) {
 
   // Mengambil URL gambar dan caption
   popupImage.src = element.querySelector("img").src;
-  popupCaption.innerHTML = element.querySelector(".overlay p").innerText;
+  popupCaption.innerHTML = element.queryS(".overlay p").innerText;
 
   // Tampilkan popup
   popup.style.display = "block";
